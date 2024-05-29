@@ -41,24 +41,3 @@ jobs:
           AUTHOR_NAME: hanhanbufeng # optional
           AUTHOR_EMAIL: zhanghyan23914@163.com# optional
           # you can populate email-id with secrets instead
-
-
-
-name: Waka Readme
-
-on:
-  schedule:
-    # Runs at 12am IST
-    - cron: '30 18 * * *'
-  workflow_dispatch:
-jobs:
-  update-readme:
-    name: Update Readme with Metrics
-    runs-on: ubuntu-latest
-    steps:
-      - uses: athul/waka-readme@master 
-        with:
-          WAKATIME_API_KEY: ${{ secrets.WAKATIME_API_KEY }}
-          GH_TOKEN: ${{ secrets.GH_TOKEN }}
-          # 时间线
-          SHOW_LOC_CHART: False
